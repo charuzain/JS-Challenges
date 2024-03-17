@@ -17,15 +17,13 @@ const findMaxNumber = (arr) => arr.sort((a, b) => b - a)[0];
 
 // using reduce
 
-const findMaxNumber3 = (arr) => arr.reduce((a, c) => {
-  if (c > a) {
-    a = c
-    return a;
-  }
-  else {
-    return a
-  }
-}, 0);
+const findMaxNumber3 = (arr) => arr.reduce((a, c) => c > a ? c : a, 0);
 
 // console.log(findMaxNumber([1, 2, 3, 4, 5, 6, 70, 8, 9, 10]));
 console.log(findMaxNumber3([1, 20, 3, 4, 5, 6, 70, 8, 9, 10]));
+
+
+// using math.max
+
+const findMaxNumber4 = (arr) => Math.max(...arr)
+console.log(findMaxNumber4([100, 20, 3, 4, 5, 6, 70, 8, 9, 10]));
